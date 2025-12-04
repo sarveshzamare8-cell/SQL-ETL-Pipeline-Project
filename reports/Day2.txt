@@ -1,0 +1,40 @@
+Tasks Completed
+
+1.Opened the staging_raw table in DB Browser and reviewed all columns.
+
+2.Ran SQL queries to check for data quality issues:
+
+Null or empty values
+
+Invalid email formats
+
+Duplicate purchase_id values
+
+Negative or zero prices
+
+3.Checked for incorrect phone lengths
+
+4.Found that the first row was empty → deleted it, reducing row count from 201 → 200 rows.
+
+5.Renamed all columns correctly (purchase_id, name, email, country, product, price, payment_method, timestamp, address, phone).
+
+6.Re-ran validation checks after renaming to confirm:
+No duplicate purchase_id values
+
+No null values in the main fields
+
+Email formats now valid
+
+7.Confirmed that the staging table is now clean and ready for transformation.
+
+Output of Day 2
+
+Staging table cleaned
+
+Empty row removed
+
+Column names corrected
+
+Data quality verified
+
+Database ready for Day 3 transformations

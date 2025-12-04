@@ -1,0 +1,25 @@
+Tasks Completed
+
+1.Downloaded the dataset ecommerce_purchases.csv.
+
+2.Created a new SQLite database named etl_pipeline.db using DB Browser for SQLite.
+
+3.Imported the CSV file into SQLite as a table called staging_raw.
+4.Verified the import:
+
+5.Checked that all columns loaded correctly.
+
+6.Confirmed total rows = 201 (including 1 empty row).
+
+7.Cleaned the staging table by deleting the empty first row.
+
+8.Final row count = 200 rows.
+
+
+Output of Day 1
+
+Database created successfully
+
+Raw dataset loaded
+
+Staging table ready for Day 2 cleaning

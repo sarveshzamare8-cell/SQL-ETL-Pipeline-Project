@@ -1,0 +1,33 @@
+Tasks Completed
+
+1. Checked for missing or empty values across all key columns using SQL queries.
+
+2. Identified and confirmed that no rows contain null or blank values after previous cleanup.
+
+3. Validated email formats using a pattern match:
+Removed any rows with invalid email structure (NOT LIKE '%@%.%').
+
+4. Checked for invalid or negative prices and confirmed all values are valid.
+
+5. Reviewed country values to ensure consistent naming across all rows.
+
+6. Ran duplication checks and confirmed:
+
+No duplicate purchase_id values exist.
+
+7. Performed a final review of phone numbers to ensure minimum length.
+Staging table now contains fully cleaned and validated data ready for transformation in Day 4.
+
+Output of Day 3
+
+Staging table is fully cleaned
+
+Invalid emails removed
+
+No null or duplicate values
+
+Country names consistent
+
+All numeric and text fields verified
+
+Data is ready to be loaded into a production_clean table on Day 4
