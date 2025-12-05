@@ -68,3 +68,5 @@ HAVING COUNT(*) > 1;
 --Verify Clean Data
 SELECT COUNT(*) FROM ecommerce_purchases;
 SELECT * FROM ecommerce_purchases LIMIT 10;
+
+SELECT * FROM production_clean LIMIT 10;
