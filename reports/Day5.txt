@@ -1,0 +1,55 @@
+Objective
+
+Perform data analytics on the cleaned production table and generate SQL queries for business insights.
+
+Tasks Completed
+1. Calculated Total Revenue
+
+Used SQL to find the overall revenue generated from all purchases in the dataset.
+
+2. Analyzed Revenue by Country
+
+Grouped purchases by country to identify which regions contribute the highest revenue.
+
+3. Identified Top 10 Customers
+
+Ran SQL queries to find the top 10 customers based on total amount spent.
+This helps understand customer value and purchasing behavior.
+
+4. Analyzed Payment Methods
+
+Counted the number of transactions based on payment methods such as:
+
+Credit Card
+
+Debit Card
+
+UPI
+
+PayPal
+
+Others
+
+This helps determine customer preferences.
+
+5. Found Most Purchased Product
+
+Checked which product was purchased the most times across all transactions.
+
+6. Analyzed Order Distribution by Country
+
+Calculated total orders from each country to identify strong and weak markets.
+
+7. Created Analytics SQL File
+
+Stored all analytics queries in a single file named:
+
+analytics_queries.sql
+
+This improves project readability and demonstrates SQL skills clearly.
+
+Summary
+
+Day 5 focused on performing real-world analytics using the cleaned production table.
+Generated valuable insights such as revenue, customer behavior, product performance, and payment method usage.
+The project now includes both ETL and analytical components.
