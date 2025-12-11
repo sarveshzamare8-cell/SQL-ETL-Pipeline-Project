@@ -1,0 +1,43 @@
+Objective
+
+Create the final production table and load the cleaned data from the staging table into it.
+
+Tasks Completed
+1. Created the Production Table
+
+Designed and created a new table named production_clean with proper data types and constraints:
+
+Added correct column names
+
+Set purchase_id as PRIMARY KEY
+
+Ensured name and email cannot be NULL
+
+Used appropriate data types (TEXT, REAL, INTEGER)
+
+2. Loaded Clean Data into Production Table
+
+Inserted all the cleaned records from staging_raw into production_clean:
+
+Successfully moved 200 rows
+
+No duplicates or invalid records
+
+Staging table → Production table completed
+
+3. Verified the Final Data
+
+Double-checked:
+
+Row count = 200 rows
+
+Data matches cleaned structure
+
+Columns aligned correctly
+
+Sample rows checked for consistency
+
+Summary
+
+Day 4 focused on building the final clean dataset that will be used for all analytics.
+The production table is now ready for analysis starting Day 5.
