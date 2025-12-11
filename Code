@@ -70,3 +70,35 @@ SELECT COUNT(*) FROM ecommerce_purchases;
 SELECT * FROM ecommerce_purchases LIMIT 10;
 
 SELECT * FROM production_clean LIMIT 10;
+
+
+SELECT SUM(price) AS total_revenue
+FROM production_clean;
+
+
+--Total revenue by contry
+SELECT country, SUM(price) AS total_revenue
+FROM production_clean
+GROUP BY country
+ORDER BY total_revenue DESC;
+
+--Top 10 Customer by spending
+SELECT name, SUM(price) AS total_spent
+FROM production_clean
+GROUP BY name
+ORDER BY total_spent DESC
+LIMIT 10;
+
+-- Most Purchase Product 
+SELECT product, COUNT(*) AS total_sold
+FROM production_clean
+GROUP BY product
+ORDER BY total_sold DESC
+LIMIT 1;
+
+--Order per Contry
+SELECT country, COUNT(*) AS total_orders
+FROM production_clean
+GROUP BY country
+ORDER BY total_orders DESC;
+
