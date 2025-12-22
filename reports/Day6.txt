@@ -1,0 +1,8 @@
+Day 6 – Data Quality & Performance Optimization
+
+- Checked NULL values in critical columns
+- Verified no duplicate purchase_id exists
+- Validated price and timestamp fields
+- Compared row counts across ETL layers
+- Created indexes for faster query performance
+- Saved validation queries in data_quality_checks.sql
