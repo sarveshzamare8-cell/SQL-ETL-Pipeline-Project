@@ -323,8 +323,11 @@ SELECT country, COUNT(*) AS total_orders
 FROM production_clean
 GROUP BY country
 ORDER BY total_orders DESC;
+
+Day 6
 Objective
 Enhance the ETL pipeline by adding data quality checks, indexing, and performance optimization.
+
 Day 6 Tasks
 Implemented Data Quality Checks
 Verified NULL values in critical columns such as:
