@@ -1,10 +1,10 @@
---Check Dublicates
+
 SELECT purchase_id, COUNT(*)
 FROM ecommerce_purchases
 GROUP BY purchase_id
 HAVING COUNT(*) > 1;
 
---Check Missing Value
+
 SELECT *
 FROM ecommerce_purchases
 WHERE name IS NULL
@@ -13,22 +13,22 @@ WHERE name IS NULL
    OR product IS NULL
    OR price IS NULL;
    
---Check Invalid email
+
 SELECT *
 FROM ecommerce_purchases
 WHERE email NOT LIKE '%@%';
 
---Check Invalid Price
+
 SELECT *
 FROM ecommerce_purchases
 WHERE price <= 0;
 
---Check Timestamb formate
+
 SELECT timestamp
 FROM ecommerce_purchases
 LIMIT 20;
 
---Check Null and Blank VALUES
+
 SELECT *
 FROM ecommerce_purchases
 WHERE purchase_id IS NULL
@@ -40,32 +40,31 @@ WHERE purchase_id IS NULL
    OR payment_method IS NULL OR payment_method = ''
    OR timestamp IS NULL;
 
---Fix Invalid email formate
+
 SELECT rowid, email 
 FROM ecommerce_purchases
 WHERE email NOT LIKE '%@%.%';
 
---Remove rows with negative or zero price
+
 SELECT *
 FROM ecommerce_purchases
 WHERE price <= 0;
 
---Standardise contry name
+
 SELECT DISTINCT country
 FROM ecommerce_purchases;
 
---UPDATE
+
 UPDATE ecommerce_purchases
 SET country = 'United States'
 WHERE country IN ('USA', 'US', 'America');
 
---Check for Dublicate ROWS
+
 SELECT purchase_id, COUNT(*)
 FROM ecommerce_purchases
 GROUP BY purchase_id
 HAVING COUNT(*) > 1;
 
---Verify Clean Data
 SELECT COUNT(*) FROM ecommerce_purchases;
 SELECT * FROM ecommerce_purchases LIMIT 10;
 
@@ -76,29 +75,63 @@ SELECT SUM(price) AS total_revenue
 FROM production_clean;
 
 
---Total revenue by contry
 SELECT country, SUM(price) AS total_revenue
 FROM production_clean
 GROUP BY country
 ORDER BY total_revenue DESC;
 
---Top 10 Customer by spending
+
 SELECT name, SUM(price) AS total_spent
 FROM production_clean
 GROUP BY name
 ORDER BY total_spent DESC
 LIMIT 10;
 
--- Most Purchase Product 
+
 SELECT product, COUNT(*) AS total_sold
 FROM production_clean
 GROUP BY product
 ORDER BY total_sold DESC
 LIMIT 1;
 
---Order per Contry
+
 SELECT country, COUNT(*) AS total_orders
 FROM production_clean
 GROUP BY country
 ORDER BY total_orders DESC;
 
+
+SELECT *
+FROM production_clean
+WHERE purchase_id IS NULL
+   OR email IS NULL
+   OR price IS NULL
+   OR timestamp IS NULL;
+
+SELECT purchase_id, COUNT(*)
+FROM production_clean
+GROUP BY purchase_id
+HAVING COUNT(*) > 1;
+
+SELECT *
+FROM production_clean
+WHERE price <= 0;
+
+
+SELECT *
+FROM production_clean
+WHERE datetime(timestamp) IS NULL;
+
+SELECT 
+  (SELECT COUNT(*) FROM staging_raw) AS staging_count,
+  (SELECT COUNT(*) FROM cleaned_purchases) AS cleaned_count,
+  (SELECT COUNT(*) FROM production_purchases) AS production_count;
+
+CREATE INDEX idx_purchase_id 
+ON production_purchases(purchase_id);
+
+CREATE INDEX idx_country 
+ON production_purchases(country);
+
+CREATE INDEX idx_timestamp 
+ON production_purchases(timestamp);
