@@ -323,3 +323,33 @@ SELECT country, COUNT(*) AS total_orders
 FROM production_clean
 GROUP BY country
 ORDER BY total_orders DESC;
+Objective
+Enhance the ETL pipeline by adding data quality checks, indexing, and performance optimization.
+Day 6 Tasks
+Implemented Data Quality Checks
+Verified NULL values in critical columns such as:
+purchase_id
+email
+price
+timestamp
+Ensured no duplicate purchase IDs exist in the production table.
+Validated Data Types
+Confirmed numeric columns (price) contain valid numbers.
+Ensured timestamp fields follow a consistent datetime format.
+Created Indexes for Performance
+Added indexes on frequently queried columns:
+purchase_id
+country
+timestamp
+Improved query execution time for analytical queries.
+Row Count Validation
+Compared row counts between:
+staging table
+cleaned table
+production table
+Ensured no data loss during ETL transformations.
+Optimized SQL Queries
+Refactored existing SQL queries to improve readability and efficiency.
+Removed redundant computations.
+Documented Validation Queries
+Stored data validation and performance queries in a separate SQL script: data_quality_checks.sql
